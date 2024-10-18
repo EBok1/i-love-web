@@ -1,0 +1,950 @@
+<h1>Sprint 13</h1>
+<h2>2-09</h2>
+<h3>Eerste dag van sprint 13.</h3>
+<ul>
+<li>
+<p>Begin met het leren van Sveltekit.</p>
+</li>
+<li>
+<p>Team bekend voor squadpage -&gt; Ik zit samen met Daan, Christopher, Annelinde, Tristan en Jason.</p>
+</li>
+<li>
+<p>Leervragen voor mijzelf opgesteld:</p>
+<ul>
+<li>Hoe werken frameworks?</li>
+<li>Hoe begin ik met het leren van SvelteKit?</li>
+<li>Wat is Svelte?</li>
+<li>Hoe werkt Sweltekit?</li>
+<li>Hoe kan je een logisch stappenplan maken om een opdracht uit te voeren?</li>
+<li>Hoe plan ik mijn tijd beter in?</li>
+<li>Hoe lever ik mijn bewijslast op de juiste manier op?</li>
+<li>Hoe blijf ik constant de dlc gebruiken?</li>
+<li>Hoe zorg ik dat ik mijn i love web bijhoud?</li>
+</ul>
+</li>
+<li>
+<p>Wat is Svelte?</p>
+</li>
+<li>
+<p>Svelte is een hulpmiddel bij het maken van websites.</p>
+</li>
+<li>
+<p>Net als andere frameworks kan je een app bouwen met componenten die opmaak, styles en gedrag combineren.</p>
+</li>
+<li>
+<p>Deze componenten zijn samengevoegd in kleine JS modules -&gt; een component is een herbruikbaar op zichzelf staand codeblok dat html css en javascript bevat die bij elkaar horen. Geschreven in een svelte bestand.</p>
+</li>
+<li>
+<p>Wat is een framework?</p>
+</li>
+</ul>
+<p>Data toevoegen:</p>
+<script>
+	let name = 'Svelte';
+</script>
+<p>Binnen de curly braces kan je alle javascript toevoegen die je wilt</p>
+<h1>Hello {name.toUpperCase()}!</h1>
+<p>Dit kun je ook gebruiken voor element attributen</p>
+<script>
+	let src = '/image.gif';
+</script>
+<img src={src}/>
+<p>Belangrijk dat de website toegankelijk is img heeft bv een alt attribuut nodig
+Je kan curly braces ook binnen een attribuut gebruiken
+alt=&quot;{name} dances.&quot;</p>
+<p>Attributen en waarden hebben vaak dezelfde waarde hebben
+src={src}</p>
+<p>Svelte heeft hier een afkorting voor
+&lt;img {src} alt=&quot;{name} dances.&quot; /&gt;</p>
+<p>Je kunt verschillende componenten en documenten toevoegen aan je opmaak</p>
+<p>Component names are always capitalised, to distinguish them from HTML elements.</p>
+<p>Je kunt een stuk html tekst toevoegen door</p>
+<p>{@html string}</p>
+Te gebruiken 
+<p>Click button:</p>
+<script>
+	let count = 0;
+
+	function increment() {
+		count += 1; 
+	}
+</script>
+<button on:click={increment}>
+	Clicked {count}
+	{count === 1 ? 'time' : 'times'}
+</button>
+<p>reactive declarations   zien er zo uit
+$: doubled = count * 2;</p>
+<p>{count} doubled is {doubled}</p>
+Maakt na een keer klikken -> 1 keer verdubbeld 2, 2 keer is verdubbeld 4 etc. 
+<p>You can even put the $: in front of things like if blocks:</p>
+<p>The full list of modifiers:
+preventDefault — calls event.preventDefault() before running the handler. Useful for client-side form handling, for example.
+stopPropagation — calls event.stopPropagation(), preventing the event reaching the next element
+passive — improves scrolling performance on touch/wheel events (Svelte will add it automatically where it's safe to do so)
+nonpassive — explicitly set passive: false
+capture — fires the handler during the capture phase instead of the bubbling phase
+once — remove the handler after the first time it runs
+self — only trigger handler if event.target is the element itself
+trusted — only trigger handler if event.isTrusted is true, meaning the event was triggered by a user action rather than because some JavaScript called element.dispatchEvent(...)
+You can chain modifiers together, e.g. on:click|once|capture={...}.</p>
+<p>transition is applied, and any parameters that were passed in — and returns a transition object which can have the following properties:
+delay — milliseconds before the transition begins
+duration — length of the transition in milliseconds
+easing — a p =&gt; t easing function (see the chapter on tweening)
+css — a (t, u) =&gt; css function, where u === 1 - t
+tick — a (t, u) =&gt; {...} function that has some effect on the node</p>
+<p>npm create svelte@latest</p>
+<p>node.js Runt javascript
+Fetch haal tinformatie uit een externe server op (machine van het internet)
+Apiurl haalt op uit de database
+Renderen: inladen van dat combineren met html en dan doorsturen (data meegeven aan de view)
+Get request ga je naar een server toe</p>
+<p>Belangrijkste dingen sveltekit/svelte</p>
+<p>Set functies die het makkelijk maken om js te schrijven in een sever (svelte)
+Svelte kan een applicatie generen met html css js
+Svelte kit is een webframework voor svelte</p>
+<p>Sveltekit: meta framework, ssr, spa, mpa, ssg, web standerds, PE, accessibility</p>
+<ul>
+<li>Get en post worden onderwater afgehandeld</li>
+<li>folder based routing</li>
+<li>Elke route heeft oa een server en component (view) bestand</li>
+<li>Data wordt geëxporteerd vanaf het server bestand naar de site</li>
+<li>deelt delen slim op in client en server</li>
+</ul>
+<p>Je zet client site rendering uit door: +page.js in de root van de route folder</p>
+<p>Svelte: csr, lightweight, compiler, component framework, scoped styling, reactive state,</p>
+<p>Directus:</p>
+<ul>
+<li>Models -&gt; elke squad is een model -&gt; member is een relatie naar de squad</li>
+<li>Content</li>
+</ul>
+<p>In de routes maak je een map met goeie naam
+In die map maak je een nieuwe pagina met +page.svelte</p>
+<p>Componenten maak je door
+In src map components te maken
+In deze map zet je een bepaald component</p>
+<p>In je +page.svelte roep je in script aan met import de functie
+En dan buiten script roep je de functie aan met de bedachte naam</p>
+<h2>3-09</h2>
+<ul>
+<li>Tutorial voor Sveltekit gemaakt. -&gt; https://learn.svelte.dev/tutorial/introducing-sveltekit</li>
+<li>Team meeting op school -&gt; Ideeën bedenken.</li>
+</ul>
+<h2>4-09</h2>
+<ul>
+<li>Team meeting op school -&gt; Ontwerpen van eerste versie van website.</li>
+<li>Taken verdeeld -&gt; Ik ga werken aan de squadpage.</li>
+</ul>
+<h2>5-09</h2>
+<ul>
+<li>Gewerkt aan eigen taak (squadpage)</li>
+<li>Geleerd hoe ik een component moet maken in svelte.</li>
+<li>Code die ik gebruikt heb om component te laten werken op homepagina:</li>
+<li>Op +page.svelte pagina staat:</li>
+</ul>
+<pre><code>&lt;script&gt;
+    import Card from '$lib/Card.svelte';
+
+    /** @type {import('./$types').PageData} */
+    export let data;
+
+    // Check if the data has been received and is an array
+    console.log('Received data in +page.svelte:', data);
+&lt;/script&gt;
+
+&lt;!-- Only render if we have people in the data --&gt;
+{#if data.people}
+    {#each data.people as person}
+        &lt;Card {person}&gt;&lt;/Card&gt;
+    {/each}
+{:else}
+    &lt;!-- This will show if no people are available --&gt;
+    &lt;p&gt;No data available&lt;/p&gt;
+{/if}
+</code></pre>
+<ul>
+<li>Card component staat in de lib (card.svelte):</li>
+</ul>
+<pre><code>&lt;script&gt;
+    export let person;
+&lt;/script&gt;
+
+&lt;article&gt;
+    &lt;h2&gt;{person.name}&lt;/h2&gt;
+    &lt;p&gt;{person.bio}&lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+<h2>6-09</h2>
+<ul>
+<li>Feedback geven op visitekaartjes van eerstejaars. (Degene die je zelf zou gebruiken en de gene die het best responsive was een stickynote geven)</li>
+<li>Formuleer drie vragen over wat je heb geleerd:
+<ul>
+<li>Wat is een attomic design system?</li>
+<li>Hoe pas ik een attomic design system toe?</li>
+<li>Hoe maak ik het beste een issue voor een component?</li>
+</ul>
+</li>
+</ul>
+<h2>9–09</h2>
+<ul>
+<li>
+<p>Workshop kill your darlings en workshop hoe ontwerp je in Figma (cyd)</p>
+</li>
+<li>
+<p>Dingen die ik geleerd heb tijdens de Figma workshop (auto layout en componenten) van cyd:</p>
+<ul>
+<li>shortcut r: maak een vierkant</li>
+<li>shortcut o: maak een cirkel</li>
+<li>shortcut cmd+g: groeperen van objecten</li>
+<li>shortcut cmd+]: brengt een object naar voor (omhoog)</li>
+<li>shortcut alt: maak bv een vierkant of cirkel aan beide kanten breder (krijgt een rechthoek en een ovaal)</li>
+<li>shortcut ctrl+shift+g: ongroeperen van objecten</li>
+<li>shortcut alt+shift: hoogte en breedte van object veranderen tegelijk</li>
+</ul>
+</li>
+<li>
+<p>Je kan een grid toepassen om zo items netjes uit te lijnen</p>
+</li>
+<li>
+<p>Gebruik 375 px voor mobiel</p>
+</li>
+<li>
+<p>Goede website voor ideeën: https://www.awwwards.com/</p>
+</li>
+<li>
+<p>Je kunt een website bijvoorbeeld live zetten met vercel</p>
+</li>
+</ul>
+<h2>13-09</h2>
+<ul>
+<li>
+<p>Eerste We love web van dit schooljaar.</p>
+</li>
+<li>
+<p>Vasilis van Gemert</p>
+</li>
+<li>
+<p>Over toegankelijkheid, creativiteit en klokken</p>
+</li>
+<li>
+<p>Lieve voor het web, omdat code gratis is.</p>
+</li>
+<li>
+<p>Flexbox en css animaties waren iets nieuws toen hij begon.</p>
+</li>
+<li>
+<p>Playground van vasilis : https://vasilis.nl/</p>
+</li>
+<li>
+<p>Favoriete website: https://lovenonsense.com/536.</p>
+</li>
+<li>
+<p>De poppetjes op de website zijn text (een bepaald lettertype).</p>
+</li>
+<li>
+<p>De letter L geeft laserogen -&gt; gedaan met transform en transitions.</p>
+</li>
+<li>
+<p>Vasilis.nl/flipping-things/</p>
+</li>
+<li>
+<p>Kaartjes met een loop gemaakt</p>
+</li>
+<li>
+<p>Vasilis.nl/clocks/</p>
+</li>
+<li>
+<p>Eerste klok die hij maakte: vasilis.nl/greek-time/</p>
+</li>
+<li>
+<p>Een uur of whatever</p>
+</li>
+<li>
+<p>Vasilis.nl/wowclock/</p>
+</li>
+<li>
+<p>Decimal-clock</p>
+</li>
+<li>
+<p>Hoe het zou zijn als er 10 uur in een dag zit, 100 minuten per uur en 100 seconden per minuut.</p>
+</li>
+<li>
+<p>Vasilis.nl/clocks/hsl-clock/02/</p>
+</li>
+<li>
+<p>Klok met kleuren</p>
+</li>
+<li>
+<p>Vasilis.nl/clock/pix-clock/</p>
+</li>
+<li>
+<p>Laat de tijd zien aan de hand van foto’s</p>
+</li>
+<li>
+<p>Elke minuut krijg je een andere foto te zien van een klok</p>
+</li>
+<li>
+<p>Sachavonbose.nl/tekeningen/</p>
+</li>
+<li>
+<p>Leuke website met bewegende tekeningen.</p>
+</li>
+<li>
+<p>Vasilis.nl/clocks/klokkenklok/02/</p>
+</li>
+<li>
+<p>Verschillende bewegende klokken telkens als je de pagina opnieuw laad.</p>
+</li>
+<li>
+<p>Vasilis.nl/clocks/typewriter-clok/06/</p>
+</li>
+<li>
+<p>De tijd wordt uitgetypt door een ‘typemachine’.</p>
+</li>
+<li>
+<p>Elke letter die je met je pink aanslaat in dunner dan de letter die je met je wijsvinger aanslaat.</p>
+</li>
+<li>
+<p>Vasilis.nl/clocks/wandering-hour/02/</p>
+</li>
+<li>
+<p>Andere reden waarom hij het web zo tof vind:</p>
+</li>
+<li>
+<p>Toegankelijkheid</p>
+</li>
+<li>
+<p>Onderzoek met blind persoon door een website navigeren</p>
+<ul>
+<li>De blinde persoon kreeg een modal in beeld -&gt; dit kreeg hij vervolgens niet weg -&gt; zijn oplossing was om de website afsluiten en dus de hele computer uit te zetten. Zo moet je telkens opnieuw beginnen als zo iets gebeurd.</li>
+</ul>
+</li>
+<li>
+<p>Verder een code/design review</p>
+</li>
+</ul>
+<h2>16-09</h2>
+<p>Pokerplanning
+Moscow
+Mark twain
+To change your life you need to change your priorities</p>
+<p>Van epic, langs (user)stories, naar taken
+Handige manier om werk op te organiseren en een hiërarchie te creëren. Het idee is om werk op te splitsen in opleverbare stukken.</p>
+<p>Voorbeelden van epic:
+Een nieuwe e-commerce website lanceren voor …
+De website van … verbeteren
+Een nieuwe website lanceren voor …
+De website van … optimaliseren voor zoekmachines</p>
+<p>Voorbeelden van stories:
+Een nieuwe e-commerce website lanceren voor …</p>
+<ul>
+<li>winkelmandje toevoegen</li>
+<li>betalingsmogelijkheden toevoegen</li>
+<li>een klantenserviceportal toevoegen</li>
+</ul>
+<p>De website van … verbeteren</p>
+<ul>
+<li>de website sneller maken</li>
+<li>de website gebruiksvriendelijker maken</li>
+<li>de website toegankelijker maken</li>
+</ul>
+<p>Voorbeelden van user-stories:
+Een nieuwe e-commerce website lanceren voor …</p>
+<ul>
+<li>winkelmandje toevoegen
+Als bezoeker wil ik producten in mijn winkelmandje kunnen doen om overzicht te houden wat ik aanschaf</li>
+<li>betalingsmogelijkheden toevoegen
+Als bezoeker wil ik producten kunnen verwijderen uit mijn winkelmandje al sik iets gevonden heb wat beter past bij wat ik nodig heb</li>
+<li>een klantenserviceportal toevoegen
+Als bezoeker wil ik overzicht houden op het uit te geven bedrag zodat ik het gevoel heb in controle te zijn</li>
+</ul>
+<p>Voorbeelden van taken:
+Als bezoeker wil ik producten in mijn winkelmandje kunnen doen om overzicht te houden wat ik aanschaf</p>
+<ul>
+<li>Database voor winkelmandje</li>
+<li>Overzicht winkelmandje tonen in HTML/CSS</li>
+<li>Producten verwijderen uit de database</li>
+<li>Interface ontwerpen voor verwijderen producten</li>
+<li>Interface ontwerpen voor aantal aanpassen</li>
+<li>Verder shoppen interface (button) / doorgaan naar betaling</li>
+<li>Ontwerpen van icoon winkelmandje</li>
+<li>Implementatie icoon winkelmandje</li>
+<li>Optelsom alle prijzen</li>
+<li>Verzendkosten</li>
+</ul>
+<p>Planning poker
+Fibonatischn reeks
+? - 0 - 1 - 2 - 3 - 5 - 8 - 13 - 21 - oneindig</p>
+<p>Techniek voor het schatten, vooral gebruikt voor timeboxing in agile principes.
+Leden van de groep geven schatting door genummerde kaarten op tafel te leggen of een getal op te schrijven in plaats van dit hardop te zeggen. De kaarten worden omgedraaid en de schattingen worden vervolgens besproken. Door de cijfers te verbergen, kan cognitieve bias van verankering vermeden worden, waarbij het eerste hardop gesproken cijfer ene precedent schept voor volgende schattingen.</p>
+<p>Moscow
+Must haves:
+Moet af op de deadline -&gt; niet af is het project gefaald
+Should haves:
+Best wel af moeten -&gt; project is jammer als het niet af is
+Could haves:
+Dit kan -&gt; als er tijd over is
+Want to have but will not have this time around:
+Dit zijn goede ideeën en nuttig om te noteren maar we komen er nu niet aantoe</p>
+<h2>17-09</h2>
+<p>Verder werken aan groepsopdracht
+Op school cards gemaakt</p>
+<h2>18-09</h2>
+<p>Hoe lever ik een project op ?
+Readme
+In readme cms uitleggen -&gt; hoe vragen aan opdrachtgever
+Code conventies
+Live zetten / publiceren
+Huisstijl -&gt; in readme (pdf)
+Gestructureerde code /
+Refactoring</p>
+<p>Refactored code:
+Gestructureerde code (conventies), semantiek, geen commented code, geen console.log, goede tabs</p>
+<p>Readme:
+kenmerken
+Live link
+Screenshots
+Instructies (uitleg over het gebruik)
+Installatiehandleiding
+Cms uitleg
+Huisstijl (of waar die te vinden is)
+Bijdragen? (Hints voor volgende developers teams)
+Gebruikte bronnen
+Badges met gebruikte technologie</p>
+<p>Live zetten:
+GitHub pages,</p>
+<h2>Donderdag 19 sep</h2>
+<ul>
+<li>Eigen gedeelte afgemaakt</li>
+<li>Pull request gemaakt</li>
+<li>Aan visitekaartje gewerkt</li>
+</ul>
+<h2>Vrijdag 20 sep</h2>
+<p>Niveaumatrix bespreken
+Kampvuursessie
+Bewijslast in portflow zetten</p>
+<p>Wat betekend de indicator
+Waarom is dit goede bewijslast
+Heb je nog leervragen met betrekking op deze indicator</p>
+<h3>Sprint 14</h3>
+<h2>Maandag 23 sep</h2>
+<p>Jamstack: is een manier om websites en webablicaties te bouwen die sneller, veiliger en schaalvaarder zijn. Het doet dit door de ervaringslaag van het web los te koppelen van de gegevens en bedrijfslogica. Hierdoor bevat de statische laag alleen nog maat HTML, CSS en JS
+Headless cms
+Hamstack.org -&gt; voorbeelden van tools</p>
+<h2>Dinsdag 24 sep</h2>
+<ul>
+<li>Meeting met opdrachtgever</li>
+<li>Briefing gemaakt:
+•	Wat is de aanleiding van deze opdracht?
+willen iets met de collectie (zelfde als rijksmuseum) 
+collectie deels online zetten -&gt; zodat musea hun objecten online zetten organisatie daar in helpen 
+kunst uit het midden oosten meer presenteren aan de wereld 
+•	Wat voor API moeten we gebruiken?
+heeft joost, als het goed is (als er meer data bij moet kan dat, kunnen we vragen) 
+•	Maakt het uit in welk framework we werken? 
+geen voorkeur voor hun gebruiken view 
+•	Hebben jullie een huisstijl waar we ons aan moeten houden? 
+gewoon het ontwerp maken, draait om de collectie 
+•	Wat is het hoofddoel van de website?
+•	Zijn er specifieke functies die jullie op de site willen hebben?
+•	Hoe willen jullie dat de gebruiker de website ervaart?
+•	Wie zijn de eindgebruikers van de website? 
+•	Is het een must om alle features op de website te hebben? 
+•	In hoeverre mogen wij afwijken van het ontwerp?</li>
+</ul>
+<p>Wat is de fabrique?
+stratigic digital design en development agency 
+onderdeel van eidra (scandinavisch)
+we are artists en engineers 
+ingewikkelde dingen simpel laten ogen 
+brand development  
+we streven er naar om onze projecten awards winning te maken (bepaald niveau)</p>
+<p>opdracht 
+ontwerp van de homepage 
+qatar museums is een organisatie bestaat uit meerdere musea en galerijen 
+collecties van 4 musea die worden tentoon gesteld 
+oneindig scrollbaar canvas (loop, stuk of 50) naar links rechts en omhoog en omlaag 
+filters die actief zijn dat je naar de zoek pagina gaat 
+als je hoverd over een filter worden de niet relevante items donkerder als je klikt ga je naar zoek pagina (op telefoon moet je scrollen voor filters)</p>
+<p>•	api driven 
+•	responsive 
+•	seo vriendelijk (geen canvas element) 
+•	toegankelijk (toesenbord navigatie en voorlezen van items) 
+•	meertalig (links naar rechts en andersom)</p>
+<p>infinite canvas
+•	zoomable (200% in en 50% out) 
+•	pannable (scrollen elke kant op)</p>
+<p>goed om op te merken 
+oneindig canvas -&gt; goed om hier over na te denken (zelfde foto mag ook meerdere keren te zien zijn) 
+fonts zijn free for all (maakt niet uit welk font) arabisch ook in het font zitten 
+navigatie gebruiken met api -&gt; is van het website platform (geld zelfde voor hamburger menu) menu overlay is een goede toevoeging</p>
+<p>bonus punten 
+•	random images 
+•	goede preformance op ipad en iphone 
+•	humburger menu overlay op desktop en mobile</p>
+<p>detail pagina als toevoeging</p>
+<p>zoomt in als je op de website land</p>
+<p>in zoekbalk 
+krijg je objecten en daar onder woorden</p>
+<p>op logo klikken ga je naar hun website</p>
+<p>unicoat ; geen latijnse karakters die je er wel in wilt hebben</p>
+<p>arabische woorden kun je langer maken (gelijk met de engelse tekst daaronder, zoas in navigatie)</p>
+<p>voor infinate canvas kun je tools gebruiken</p>
+<ul>
+<li>Vragen die we hadden bedacht:
+•	Wat is de aanleiding van deze opdracht?
+•	Wat voor API moeten we gebruiken?
+•	Maakt het uit in welk framework we werken?
+•	Hebben jullie een huisstijl waar we ons aan moeten houden?
+•	Wat is het hoofddoel van de website?
+•	Zijn er specifieke functies die jullie op de site willen hebben?
+•	Hoe willen jullie dat de gebruiker de website ervaart?
+•	Wie zijn de eindgebruikers van de website?
+•	Is het een must om alle features op de website te hebben?
+•	In hoeverre mogen wij afwijken van het ontwerp?</li>
+</ul>
+<h2>Woensdag 2 oktober</h2>
+<ul>
+<li>Workshop Design Critique waarin jullie ontwerpen onder de loep nemen en feedback geven. (Dorien)</li>
+<li>feedback gegeven op verschillende designs</li>
+<li>Design critique
+Deter rams
+Good design is innovative
+Makes a product useful
+Makes a good product understandable -&gt; feed forward en feedback
+Is thorough down to the last detail -&gt; kleine details toepassen
+Is as little design as possible -&gt; belangrijk om te focussen op de essential onderdelen van de website</li>
+</ul>
+<p>Issue geschreven voor design critique
+https://github.com/fdnd-agency/buurtcampus-oost/issues/173
+Good design makes a product understandable
+Tekst op homepagina is lijkt erg klein, omdat de titel heel groot is.
+Als je op een andere pagina klikt is de animatie raar, er lijkt alsof er iets fout gaat.</p>
+<p>Good design is thorough down to the last detail
+Misschien een optie om de animatie uit te zetten.
+Op de nieuwe site is er geen sprake van een hover state.
+Design veranderd met het weer, dat is wel erg leuk.</p>
+<p>Good design is as little design as possible
+Bij de minor website heb je een animatie met een blaadje als je naar de andere pagina gaat, deze is wel erg lang.</p>
+<h2>donderdag 3 oktober</h2>
+<ul>
+<li>https://dev.to/dhintz89/simple-filters-in-css-or-js-185k</li>
+<li>Simpel filter maken</li>
+</ul>
+<pre><code>&lt;div class=&quot;filteredList&quot;&gt;
+    &lt;button class=&quot;filter-option&quot; data-filter=&quot;Pottery&quot; tabindex=&quot;-1&quot;&gt;Pottery&lt;/button&gt; 
+    &lt;button class=&quot;filter-option&quot; data-filter=&quot;Islamic art&quot; tabindex=&quot;-1&quot;&gt;Islamic art&lt;/button&gt; 
+    &lt;button class=&quot;filter-option&quot; data-filter=&quot;Tapestry&quot; tabindex=&quot;-1&quot;&gt;Tapestry&lt;/button&gt; 
+    &lt;button class=&quot;filter-option&quot; data-filter=&quot;Glass&quot; tabindex=&quot;-1&quot;&gt;Glass&lt;/button&gt; 
+    &lt;button class=&quot;filter-option&quot; data-filter=&quot;*&quot; tabindex=&quot;-1&quot;&gt;All&lt;/button&gt;
+
+    &lt;!-- &lt;h3&gt;Animals&lt;/h3&gt;
+    &lt;div class=&quot;dog walks&quot;&gt;Dog&lt;/div&gt;
+    &lt;div class=&quot;eagle flies&quot;&gt;Eagle&lt;/div&gt;
+    &lt;div class=&quot;cow walks&quot;&gt;Cow&lt;/div&gt;
+    &lt;div class=&quot;shark swims&quot;&gt;Shark&lt;/div&gt;
+    &lt;div class=&quot;canary flies&quot;&gt;Canary&lt;/div&gt;
+    &lt;div class=&quot;human walks&quot;&gt;Human&lt;/div&gt;
+    &lt;div class=&quot;salamander swims walks&quot;&gt;Salamander&lt;/div&gt; --&gt;
+  &lt;/div&gt;
+
+
+&lt;style&gt;
+button[data-filter=&quot;walks&quot;]:focus ~ div:not([class*=&quot;walks&quot;]) {
+  display:none;
+}
+
+button[data-filter=&quot;swims&quot;]:focus ~ div:not([class*=&quot;swims&quot;]) {
+  display:none;
+}
+
+button[data-filter=&quot;flies&quot;]:focus ~ div:not([class*=&quot;flies&quot;]) {
+  display:none;
+}
+</code></pre>
+<h2>Maandag 7 oktober</h2>
+<p>Software development is moeilijk
+Heel veel verschillende systemen</p>
+<ul>
+<li>don’t repeat yourself</li>
+<li>keep it stupid simple</li>
+<li>Packeges</li>
+<li>release early release often</li>
+<li>rubber ducking debugging</li>
+<li>scrum</li>
+<li>softwear reviews</li>
+<li>user-centraded design</li>
+</ul>
+<p>Waterval vs agile
+Specification-related paradigms: iterative and incremental development, waterfall model, normal methods
+Heeft de structuur van een waterval
+Heel uitgebreide documentatie</p>
+<p>Comprehensive system: agile software, development etc.
+Itererend</p>
+<p>Find agile woordenlijst agile zelftest
+Agile woordenlijst:
+Agile development
+Backlog
+Business owners
+Contiuous intergration -&gt; cicd pipeline, pull requests als pull request wordt geaccepteerd wordt automatisch online gezet. Koppelen van code.
+Daily scrum
+Definition of done
+Epic
+Feature
+Iteration
+Minimal viable product -&gt; alle must haves die geinplementeert zijn (het minimale wat je kunt leveren aan een bedrijf)
+Moscow
+Optimum viable product -&gt; alles geinplementeert wat de opdrachtgever wilde
+Planning poker
+Product owner
+Refactoring
+Retrospective
+Release
+Scrum -&gt; gaat met dingen om die onzeker zijn
+Is een effectieve en flexibele manier …
+Check in check out (learning journal bijhouden) (goed voor bewijslast)<br>
+Scrum master
+Scrum team
+Sprint
+Sprint goal
+Sprint planning
+Sprint review
+Stand-up -&gt; waar loop je tegenaan, hoe ver ben je, wat ga je doen
+Stakeholders -&gt; mensen die op een of andere manier met het project te maken hebben (eigenaar bedrijf, gebruikers, opdrachtgever)
+Task
+Task board
+Task points
+Velocity -&gt; hoeveel planning poker punten je afkrijgt (zoveel mogelijk punten halen in een sprint)
+Wat betekenen deze dingen -&gt;</p>
+<p>Alles wat nog kan kan worden gedaan/ ideeën in projectboard zetten dat je weet waar je volgende sprint aan kunt werken</p>
+<p>Nieuwe agile instrumenten
+Een agile team kan eventuele problemen snel oplossen omdat ze alle nodige expertise bezit en mandaat heeft</p>
+<p>Get (even more) agile</p>
+<ul>
+<li>Noem rollen explicieter -&gt; wat lever jij binnen het team</li>
+<li>Benoem de fasering en werkwijze</li>
+<li>Plan onderdelen van het agile process die je nu nog niet omarmd en neem verantwoording op je</li>
+<li>Neem beslissingen</li>
+</ul>
+<p>Programming spike</p>
+<h2>Woensdag 9 oktober</h2>
+<p>sprint review
+Readme -&gt; hoe werkt de applicatie
+Example.env bestand
+Comment code</p>
+<p>Doel van een sprint review?
+Specifieke vragen bedenken voor feedback
+Agenda maken
+Demo (langs user stories gaan, website laten zien naast het design, laten zien wat er nog niet is gelukt adhv design, tijdens demo benadrukken wat de punten zijn waarop je feedback wilt)
+Specifieke vragen stellen om feedback te krijgen
+Feedback geven aan elkaar, ook de opdrachtgever (voorstel om een functionaliteit beter te maken)
+Uitkomsten van testen bespreken, bv over huisstijl en kleurcontrast
+Plan voor aankomende sprint
+Werk opleveren</p>
+<p>Rol verdeling binnen demo
+Presentator
+Feedback verwerker (feedback verwerken in issues)
+Cheerleader
+Timekeeper</p>
+<p>Notes tijdens ‘presentatie’
+Foto in menu nog niet goed
+Responsive zonde image
+Geen hover op iPhone -&gt; hoe doe je dat bij de images (geen ze bv al een titel)
+H2 in een li item -&gt; (niet nodig voor een screenreader, overkill?)
+intressant om pagina er naast te zetten met masonry grid /collections experiments
+Lazy loading
+Scroll animation timeline
+Inzoomen werkt nog niet</p>
+<h2>Donderdag 10 oktober</h2>
+<ul>
+<li>Sprint review met opdrachtgever</li>
+<li></li>
+</ul>
+<h3>Sprint 15</h3>
+<h2>Maandag 14 oktober</h2>
+<ul>
+<li>
+<p>Sprint 15 choices choices</p>
+</li>
+<li>
+<p>in deze sprint ligt de focus op het maken van onderbouwende keuzes voor de framework, tools en workflow die je kunt geburiken voor een project</p>
+</li>
+<li>
+<p>je verantoord je keuzes, neemt de mentotrol serieus</p>
+</li>
+<li>
+<p>Volgende week woensdag presenteer je je framework met een replica van je webiste (mag ook kiezen voor een ander headless cms, is optioneel, 'extra moeilijk')</p>
+</li>
+<li>
+<p>Eigen tech-stack kiezen</p>
+</li>
+<li>
+<p>Keuzes die samenhangen met je stage</p>
+</li>
+<li>
+<p>Woensdag Kevin louise over derictus -&gt; bedenk eventueel vragen</p>
+</li>
+<li>
+<p>Vrijdag we love web met Dion over het maken van een portfolio</p>
+</li>
+<li>
+<p>Woensdag hulp met react tech stack Chianta</p>
+</li>
+<li>
+<p>Nog maar twee weken voor checkpoints</p>
+</li>
+<li>
+<p>12 indicatoren (alleen je beste indicatoren)</p>
+</li>
+<li>
+<p>is het nuttig omj naar de stagemarkt te gaan als ik het schakelprogramma wil gaan volgen</p>
+</li>
+<li>
+<p>na deze sprint ga je verder met sveltekit</p>
+</li>
+<li>
+<p>voordelen en nadelen te zien (is dit makkelijker of beter en waarom, prettiger in gebruik? etc.)</p>
+</li>
+<li>
+<p>lane is -&gt; scroll positie bepalen (smooth scrolling)</p>
+</li>
+<li>
+<p>client: library, html, css, js</p>
+</li>
+<li>
+<p>middleware: cms, api</p>
+</li>
+<li>
+<p>server: nodejs, database, framework</p>
+</li>
+<li>
+<p>factors for choosing a techstack:</p>
+</li>
+<li>
+<p>platform, project type, scalability, performace, team experitize, maintenance, cost, hoeveel mensen werken er aan</p>
+</li>
+<li>
+<p>user experience - DX - development principles (minder prettig in gebruik)</p>
+</li>
+<li>
+<p>rekening houden met UX, DX, CMX (content management experience)</p>
+</li>
+<li>
+<p>keuze van techtack bepaald hoe makkelijk je er mee kan omgaan</p>
+</li>
+<li>
+<p>kies een nieuwe teck stack voor het ontwerpen en bouwen van een webiste voor een opdrachtgever. werk aan dezelfde epic als in sprint 14, maar dan met een ander framework en/of headless cms en/of andere tooling, presenteer jouw bevindingen aan je team</p>
+</li>
+</ul>
+<h2>Woensdag 16 oktober</h2>
+<ul>
+<li>
+<p>Opdracht gemaakt (workshop) met eerste jaars</p>
+</li>
+<li>
+<p>https://github.com/fdnd-task/all-human-accessible-website/blob/main/docs/user-experience-van-html.md</p>
+</li>
+<li>
+<p>Eerste jaars gaven presentatie over hun geteste website</p>
+</li>
+<li>
+<p>Feedback gegeven in portflow</p>
+</li>
+</ul>
+<p>feedback cianta
+flex is iets gelimiteerder dan grid</p>
+<p>check-out
+schrijf kort op wat je vandaag hebt gedaan -&gt; https://github.com/fdnd-task/all-human-accessible-website/blob/main/docs/user-experience-van-html.md
+benoem drie dingen die je hebt geleerd
+beschrijf alle 6 onderwerpen uit de workshop en noteer welke je kan toepassen in je opdracht.</p>
+<p>presenatie (we love web)
+kevin works at directus
+how i make choices en what kind i need to make
+show some features</p>
+<p>directus
+headless cms
+to help you go quicker</p>
+<p>his role
+developer experiance
+adducation -&gt; how to help people understand directus
+community egagement -&gt; support and organising (kopen of over vertellen)
+key extantions are being build en meet expectations</p>
+<p>how make money
+directus cloud<br>
+selfposted
+support -&gt; profecional serveces
+directus plus
+advisory
+market based
+you make money we make some money of that
+not a truely open sours
+use a business licens
+if you are succesfull we are succesfull
+we love it if you self host</p>
+<p>tradeoffs
+there will always be some sort of choice
+you can pick two of these -&gt; good and fast (expensive), good and cheap (slow), fast and cheap (low quality) never all three (the iron trangle)</p>
+<p>perfectionism</p>
+<p>tech stack slection</p>
+<p>performance vs maintainability
+how may users are going to use this
+at directus we look at performance</p>
+<p>tailwind
+css utilaty library
+allows you to compose styles</p>
+<p>velocity vs flexability
+velocity: how fast can you build something</p>
+<p>AI
+build on theft
+everyone is doing it
+cost of ai
+accuracy</p>
+<p>concerns
+we are not a ai company -&gt; distraction
+accuracy when working with data
+depandancy on 3the parties</p>
+<p>cost benefit-analysis
+swot analysisi
+weighted decision matrix</p>
+<p>using directus
+its oke as a cms
+good on speed
+high quality</p>
+<p>directus tradeoffs
+flexible low level platform -&gt; that means it can not preform at everyting
+data driven cms
+tipicaly arent a content manager
+features we build have to benefit 80% of the users.</p>
+<p>marketplace</p>
+<p>some
+the tech you use probalby doesnt matter
+you are going to make some shitty decisions -&gt; own it and make better decissions next time (learn over time)</p>
+<p>root desicions in user
+root desicion i user needed</p>
+<p>directus tv -&gt; directus academy</p>
+<p>web soccet
+two way connection to sent data both ways
+games, veilingen, uber driver</p>
+<p>talk Shyanta Vleugel
+techlead bij triple -&gt; part of hypersolid
+s.vleugel@wearetriple.com
+bestaad 25 jaar -&gt; 250+ mensen</p>
+<p>onze core:
+development
+design
+technical operations
+data en insights</p>
+<p>cultuur
+mooie dingen maken met leuke mensen
+we delen onze eravringen projecten en innovaties met elkaar
+innovatie is erg balngrijk -&gt; meegaan met de techniek
+we zoeken conferenties op om geinspireerd en up to date te blijven
+we zijn gek op feestjes, en missen geen moment om er een te vieren</p>
+<p>het web team
+react native, web, smartTV
+drie losse teams</p>
+<p>web
+react of svelte
+afhankelijk van type project
+bestaat hett al? vaak react -&gt; blijft in react
+is het nieuw -&gt; graag maken in svelte</p>
+<p>smartTV
+gewoon een website
+niet zo smart
+svelte gekozen -&gt; lightweight, betere preformance, beeld naar html css en js -&gt; geen grote files</p>
+<p>react native
+in react, react basics
+styling werkt iets anders
+mogelijkheid tot nieuwe componenten inladen/gebruiken</p>
+<p>way of working binne het webteam
+scrum
+daily standup, refinments, retrospect, sprint review/planning,
+gebruiken JIRA ticket management
+GIT -&gt; code reviews
+conventional commits</p>
+<p>de gemene delen</p>
+<ul>
+<li>iedereen werkt met dezelfde talen</li>
+</ul>
+<p>de verschillen
+elk project heeft andere afhankelijkheden -&gt; api
+elk team werkt aan een ander type project
+elk product heeft zijn bijzonderheden -&gt; nieuwe elementen, support oudere browsers</p>
+<p>wat kan invloed hebben op je tech-stack?
+seo preformance
+heeft voornamelijk te maken met je eindproduct -&gt; wat heeft je eindproduct nodig en waarom kies je dan die techstack
+machines met weinig preformance
+eenmalige website
+wens voor animaties -&gt; svelte goed in</p>
+<p>tech tips
+don't repeat yourself -&gt; als je iets gemaakt heb wat je veel moeite heeft gekost en die je kan hergebruiken zet het dan ergens waar je er makkelijk bijkan
+components maken die je telkens kan hergebuiken -&gt; belangrijk volgende sprint
+gebruik van componenten is heilig, het framework waarin je dit giet staat hier los van</p>
+<p>j query alleen voor animatie</p>
+<p>manieren van leren
+lezen -&gt; past toe
+eerst alleen lezen</p>
+<p>presentatie justus
+volgende week vrijdag presenteren
+poc aan het doen voor andere tech stack</p>
+<p>het is door logica dat we bewsijzen het is door intuitie dat we ontdekken. -&gt; henri poincare</p>
+<p>wat is logica en waarom zou je het gebruiken
+logica is een systeem voo rsolide argumentatie
+in het dagelijksleven zorgt logica voor heldere redenering, betere besluits</p>
+<p>het argumentatieproces in vier stappen
+stap 1
+formuleer een standpunt en selecteer argumenten
+als je een standpunt hebt inventariseer je welke argumenten voor en tegen je kunt geven. schrijf die op (en geef ze een simpele variabele naam)
+bv leercurve, prettig gebruik</p>
+<p>vue is opensource, grote communitie</p>
+<p>ux: accessability, performance, progressive enhancement, responsiveness
+dx: documentatie, werkgelegenheid, community, helderheid, DRY
+cmx: kracht, kosten, complexiteit, support</p>
+<p>serie argumenten verzameld en een standpunt</p>
+<p>stap 2
+maak een argumentatieschema</p>
+<p>stap 3
+beoordelen van aanvaardbaarheid
+is de argumentatie inhoudenlijk correct?
+id de argumentatie</p>
+<p>stap 4
+argumentatieschema uitwerken</p>
+<p>dealine portfolio
+zondag 27-10 dealine portflow 23:59</p>
+<h2>Donderdag 17 oktober</h2>
+<ul>
+<li>Deeltaak</li>
+<li>Justify Your Tech-stack</li>
+<li>https://github.com/fdnd-task/justify-your-tech-stack/blob/main/docs/INSTRUCTIONS.md</li>
+</ul>
+<h2>Vrijdag 18 oktober</h2>
+<p>we love web Dion Pieters
+Over zijn Portfolio
+Free concept creation -&gt; the art of development
+Arhnem gestudeerd
+Houd wat minder van e-commerce projecten</p>
+<p>Active theory
+heel experimenteel
+Spotify, Louie Vitton, Dior</p>
+<p>Voor zich zelf beginnen -&gt; portfolio nodig
+Is je eigen portfolio het slechtste product wat je gaat opleveren
+'you are the worst client'
+Is nooit af moet altijd meer</p>
+<p>Wie gaat mijn portfolio ontwerpen? ik?
+Heb ik nog een oud portfolio?
+Wie gaat mijn portfolio bekijken?
+Wat wil ik laten zien op mijn portfolio?
+Hoeveel tijd moet ik besteden aan mijn portfolio?
+waar heb ik een portfolio voor nodig?</p>
+<p>Moet een developer kunnen designen en moet een designer kunnen developen?
+Persoonlijke mening: developer hoeft niet kunnen te deisgnen en een designer hoeft niet kunnen te developen
+Als je het allebei kan ga je vaak in limitaties denken</p>
+<p>Waar sta je nu? -&gt; personal growth
+Showcase work -&gt; my projects
+Playground
+Motion concepts -&gt; nog niks uitgewerkt
+Wanneer je beschibaar bent</p>
+<p>Moet ieder element op je site een vorm van animatie hebben?
+Mensen moeten een leuke tijd hebben op je site
+Ga los op je website</p>
