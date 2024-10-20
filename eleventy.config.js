@@ -1,4 +1,8 @@
 export default function (eleventyConfig) {
+    eleventyConfig.addCollection("post", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/posts/*.md");
+    });
+
     return {
         dir: {
             input: 'src',
