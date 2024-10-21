@@ -299,3 +299,14 @@ Moet ieder element op je site een vorm van animatie hebben?
 Mensen moeten een leuke tijd hebben op je site 
 Ga los op je website 
 
+## Zondag 20 oktober
+- We love web blog gemaakt met elevelty (11ty). 
+- Start gemaakt met de weather app(site). 
+
+## Maandag 21 oktober 
+- Mentor bij eerste jaars. 
+- Presentatie over kleur en contrast. 
+    - Beperkingen waar je tegen aan kunt lopen: touch, see, hear, speak (kan ook een tijdelijke beperking zijn).
+- Verschillende brillen op, om te beleven hoe mensen met een zicht beperking bepaalde dingen zien. Ook wel hoe kleur en contrast invloed hebben op de beleving van een website.
+- Gebruik naast kleuren alternatieve informatie. Gebruik onderscheidende kleuren. Wat kun je doen aan teksten op plaatjes. 
+
