@@ -2,7 +2,8 @@
 layout: layout.html
 ---
 
-<h1>Weather in {{ weather.address }}</h1>
+<h1>Weather in {{ weather.latitude }}/{{ weather.longitude }}</h1>
+
 
 <p>Temperature: {{ weather.currentConditions.temp }}°C</p>
 <p>Conditions: {{ weather.currentConditions.conditions }}</p>
@@ -21,5 +22,5 @@ layout: layout.html
 
 {% for post in collections.post %}
 <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-<p>{{ post.content }}</p>
+<!-- <p>{{ post.content }}</p> -->
 {% endfor %}

@@ -25,20 +25,23 @@ title: Sprint 13
 - Wat is een framework? 
 
 Data toevoegen: 
+```
 <script>
 	let name = 'Svelte';
 </script>
+```
 
 Binnen de curly braces kan je alle javascript toevoegen die je wilt 
-<h1>Hello {name.toUpperCase()}!</h1>
+```<h1>Hello {name.toUpperCase()}!</h1>```
 
 Dit kun je ook gebruiken voor element attributen
+```
 <script>
 	let src = '/image.gif';
 </script>
 
 <img src={src}/>
-
+```
 Belangrijk dat de website toegankelijk is img heeft bv een alt attribuut nodig 
 Je kan curly braces ook binnen een attribuut gebruiken 
 alt="{name} dances."

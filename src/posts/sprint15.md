@@ -310,3 +310,39 @@ Ga los op je website
 - Verschillende brillen op, om te beleven hoe mensen met een zicht beperking bepaalde dingen zien. Ook wel hoe kleur en contrast invloed hebben op de beleving van een website.
 - Gebruik naast kleuren alternatieve informatie. Gebruik onderscheidende kleuren. Wat kun je doen aan teksten op plaatjes. 
 
+- Om verschillende Emulate vision deficiencies te testen gebruik:  Open Chrome Devtools > Click 3 dots > Select Rendering > Emulate vision deficiencies. 
+- Hier mee kun je zien hoe je website eruit ziet met blurred vision, reduced contrast, protanopia (no red), deuteranopia (no green), tritanopia (no blue), achromatopsia (no color). 
+
+## Workshop teamlead 
+- Over de rol van een mentor.
+
+## Do's 
+- Weet waar de les over gaat
+- Pro actieve houding. 
+- Vragen met een tegenvraag beantwoorden, mensen op weg helpen naar een antwoord zonder het voor te kauwen. 
+- Bewust informatie doseren, neem niveau mee in feedback geven. Houd het klein. 
+- Bron meegeven bij een issue. 
+- Communiceren over planning met docenten. 
+- Hoe kan ik omgaan met diversiteit binnen het mentorteam. Wat doet diversiteit binnen teams en hoe plan in rondom diversiteit. Let op samenstelling van mentoren 
+- Vier stadia van bekwaamheid. 
+- Sandwich methode van feedback geven (top, tip, top geven)
+- Als mentor hoef je niet alles te weten, je kunt samen opzoek gaan naar het antwoord. 
+- Squadleade vragen naar meer uitdaging voor de studenten. 
+- Feedback vragen aan de studenten (of je de rol van mentor wel goed uitvoerd(in portflow?))
+
+## Dont's 
+- niet te veel feedback geven.
+- niet te veel vragen stellen.
+- niet te veel tijd besteden aan een student.
+- Teveel grappen maken met mede mentoren. 
+- Te streng zijn. 
+- Afdwalen en op teveel feedback geven. 
+- Lang wegblijven. 
+- Niet aanwezig zijn/laat komen. 
+- Mensen afkraken. 
+- Geiriteerd reageren als mensen dezelfde vraag blijven stellen. 
+
+## Dinsdag 22 oktober 
+- geprobeert met schetsen en tekst uit te leggen wat vue is. 
+- Presentatie maken justify your tech stack. 
+

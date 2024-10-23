@@ -1,13 +1,14 @@
 export default function (eleventyConfig) {
+
+    eleventyConfig.addPassthroughCopy('src/assets');
     eleventyConfig.addCollection("post", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/posts/*.md");
+        return collectionApi.getFilteredByGlob("./src/posts/*.md");
     });
 
     return {
         dir: {
             input: 'src',
-            includes: '_includes',
-            output: '_site',
+            output: 'build',
         }
     }
 }
