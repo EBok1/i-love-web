@@ -336,7 +336,6 @@ Want to have but will not have this time around:
 Dit zijn goede ideeën en nuttig om te noteren maar we komen er nu niet aantoe 
 
 
-
 ## 17-09 
 Verder werken aan groepsopdracht 
 Op school cards gemaakt 
