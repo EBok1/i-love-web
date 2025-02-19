@@ -1,3 +1,7 @@
+---
+title: Sprint 18
+---
+
 ## Maandag 6 januari 
 - talk is cheap. Show me the code. 
 - Alles verzorgd, puntjes op de i, gepubliceerd op fdnd agency 
