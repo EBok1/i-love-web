@@ -4,13 +4,14 @@ layout: layout.html
 
 <!-- Doormiddel van weather spreek je de elementen uit de api aan. -->
 <h1>Weather in {{ weather.latitude }}/{{ weather.longitude }}</h1>
+<h2>Weather in {{ weather.resolvedAddress}}</h2>
 
 <p>Temperature: {{ weather.currentConditions.temp }}°C</p>
 <p>Conditions: {{ weather.currentConditions.conditions }}</p>
 <p>Humidity: {{ weather.currentConditions.humidity }}%</p>
 <p>Wind Speed: {{ weather.currentConditions.windspeed }} km/h</p>
 
-<h2>Forecast for the next few days:</h2>
+<h3>Forecast for the next few days:</h3>
 <ul>
   {% for day in weather.days %}
   <li>
@@ -19,12 +20,13 @@ layout: layout.html
   {% endfor %}
 </ul>
 
-
 {% for post in collections.post %}
 <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
 <!-- <p>{{ post.content }}</p> -->
 {% endfor %}
 
 <h3 class="typo1"> Typografie test </h3>
+
+{% include "trivia/trivia.html" %}
 
 {% include "pop-over/pop-over-component.html" %}
