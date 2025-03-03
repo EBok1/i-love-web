@@ -5,7 +5,6 @@ layout: layout.html
 <!-- Doormiddel van weather spreek je de elementen uit de api aan. -->
 <h1>Weather in {{ weather.latitude }}/{{ weather.longitude }}</h1>
 
-
 <p>Temperature: {{ weather.currentConditions.temp }}°C</p>
 <p>Conditions: {{ weather.currentConditions.conditions }}</p>
 <p>Humidity: {{ weather.currentConditions.humidity }}%</p>
@@ -14,9 +13,9 @@ layout: layout.html
 <h2>Forecast for the next few days:</h2>
 <ul>
   {% for day in weather.days %}
-    <li>
-      {{ day.datetime }}: {{ day.temp }}°C, {{ day.conditions }}
-    </li>
+  <li>
+    {{ day.datetime }}: {{ day.temp }}°C, {{ day.conditions }}
+  </li>
   {% endfor %}
 </ul>
 
@@ -27,3 +26,5 @@ layout: layout.html
 {% endfor %}
 
 <h3 class="typo1"> Typografie test </h3>
+
+{% include "pop-over/pop-over-component.html" %}
